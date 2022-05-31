@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-fizzbuzz()
 
 def fizzbuzz():
     for i in range(1, 101):
@@ -14,3 +13,5 @@ def fizzbuzz():
             print("Buzz ")
         else:
             print("{} ".format(i))
+
+fizzbuzz()
