@@ -14,6 +14,6 @@ def main():
         for i in range(argc + 1):
             print("{}: {}".format(i, sys.argv[i]))
 
+
 if __name__ == "__main__":
     main()
-    
