@@ -2,8 +2,8 @@
 
 
 def no_c(my_string):
-    string = ""
+    nstring = ""
     for i in my_string:
         if i not in "Cc":
-            string += i
-     return string
+            nstring += i
+     return nstring
