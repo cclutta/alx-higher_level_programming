@@ -6,4 +6,3 @@ def complex_delete(a_dictionary, value):
         if v == value:
             a_dictionary.pop(k)
     return a_dictionary
-            
