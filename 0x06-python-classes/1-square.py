@@ -9,4 +9,3 @@ class Square:
         """ Sets private attribute size for square
         """
         self.__size = size
-    
