@@ -9,8 +9,10 @@ class Square:
         """ Sets private attribute size for square
         Args:
             size: size of side of square
+            position: coordinates
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -50,7 +52,7 @@ class Square:
     def my_print(self):
         """ prints in stdout the square with the character #. """
         if self.__size > 0:
-            for i in range(self._position[1]):
+            for i in range(self.__position[1]):
                 print("")
             for j in range(self.__size):
                 print(' ' * self.__position[0], end='')
