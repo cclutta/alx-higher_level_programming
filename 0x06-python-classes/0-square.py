@@ -6,7 +6,7 @@ Square class definition
 """
 
 
-class square:
+class Square:
     """Square class"""
     
     pass
