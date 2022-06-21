@@ -5,13 +5,13 @@
 
 class Square:
     """Square class"""
-    def __init__(self, size=0, position=(0,0):
-        """ Sets private attribute size for square
-        Args:
-            size: size of side of square
-        """
-        self.size = size
-        self.position = position
+    def __init__(self, size=0, position=(0, 0):
+                 """ Sets private attribute size for square
+                 Args:
+                 size: size of side of square
+                 """
+                 self.size = size
+                 self.position = position
 
     @property
     def size(self):
