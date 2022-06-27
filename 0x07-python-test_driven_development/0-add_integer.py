@@ -9,7 +9,7 @@ has one function
 def add_integer(a, b=98):
     """
     Return the sum of a and b
-    
+
     Args:
         a (int, float): first number
         b (int, float): second number
@@ -21,7 +21,7 @@ def add_integer(a, b=98):
             print("a must be an integer")
     else:
         raise TypeError("a must be an integer")
-        
+  
     if type(b) in [int, float]:
         try:
             b = int(b)
