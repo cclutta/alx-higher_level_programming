@@ -26,7 +26,7 @@ class Rectangle:
 
     def __repr__(self):
         """ Repr behavior for rectangle. """
-        r = "Rectangle({:d}, {:d})".format(self.__width, self.__height)"
+        r = "Rectangle({:d}, {:d})".format(self.__width, self.__height)
         return r
 
     @property
