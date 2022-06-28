@@ -50,7 +50,7 @@ class Rectangle:
         """ Returns area. """
         return self.__width * self._height
 
-    def perimieter(self):
+    def perimiter(self):
         """ Returns perimeter. """
         if self.__width or self.__height is 0:
             return 0
