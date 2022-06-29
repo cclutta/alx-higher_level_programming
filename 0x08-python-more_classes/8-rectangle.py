@@ -19,7 +19,6 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
-
     def __str__(self):
         """ Print behavior. """
         r = ""
@@ -77,3 +76,15 @@ class Rectangle:
         """ Sets del behavior of object. """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ Return biggest rectangle. """
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        return rect_1
