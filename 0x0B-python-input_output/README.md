@@ -1,4 +1,4 @@
-#0x0B. Python - Input/Output
+# 0x0B. Python - Input/Output
 Why Python programming is awesome
 How to open a file
 How to write text in a file
