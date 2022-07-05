@@ -8,7 +8,7 @@ Contains student class
 def Student:
     """ Student class """
 
-    def __init__(self, first_name, last_name_ age):
+    def __init__(self, first_name, last_name, age):
         """ Sets attributes for student object """
  
         Args:
