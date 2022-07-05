@@ -10,7 +10,7 @@ def Student:
 
     def __init__(self, first_name, last_name_ age):
         """ Sets attributes for student object """
-        
+ 
         Args:
             first_name: first name
             last_name: last name
@@ -23,4 +23,3 @@ def Student:
     def to_json(self):
         """ Returns dict desc of student """
         return self.__dict__
-        
