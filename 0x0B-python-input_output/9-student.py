@@ -6,7 +6,7 @@ Contains student class
 
 
 def Student:
-    """defn. """
+    """class Student that defines a student by. """
     
     def __init__(self, first_name, last_name, age):
         """puts attributes for student object """
