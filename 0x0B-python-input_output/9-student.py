@@ -6,10 +6,10 @@ Contains student class
 
 
 def Student:
-    """Student defn. """
+    """ defn. """
     
     def __init__(self, first_name, last_name, age):
-        """Sets attributes for student object """
+        """puts attributes for student object """
  
         Args:
             first_name: first name
