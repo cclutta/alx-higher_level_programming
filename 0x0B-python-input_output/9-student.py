@@ -9,12 +9,12 @@ def Student:
     """class Student that defines a student by. """
 
     def __init__(self, first_name, last_name, age):
-        """puts attributes for student object
+        """Initialize new student
 
         Args:
-            first_name: first name
-            last_name: last name
-            age: age
+            first_name: first name of student
+            last_name: last name of student
+            age: age of student
         """
         self.first_name = first_name
         self.last_name = last_name
