@@ -12,9 +12,9 @@ def Student:
         """Initialize new student
 
         Args:
-            first_name: first name of student
-            last_name: last name of student
-            age: age of student
+            first_name (str): first name of student
+            last_name (str): last name of student
+            age (int): age of student
         """
         self.first_name = first_name
         self.last_name = last_name
