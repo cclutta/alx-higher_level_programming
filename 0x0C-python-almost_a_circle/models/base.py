@@ -9,7 +9,7 @@ class Base:
 
     def __init__(self, id=None):
         """Initializes attributes
-        
+
         Args:
             id: id
         """
