@@ -38,3 +38,23 @@ class Base:
                 lst.append(obj.to_dictionary())
         with open(cls.__name__ + ".json", 'w') as f:
             f.write(Base.to_json_string(lst))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation json_string.
+        """
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set.
+        """
+        if cls.__name__ == "Rectangle":
+            n = cls(1, 1)
+        else:
+            n = cls(1)
+        n.update(**dictionary)
+        return n
+
