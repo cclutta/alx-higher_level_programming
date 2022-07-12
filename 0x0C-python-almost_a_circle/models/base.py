@@ -2,6 +2,7 @@
 """Base module
 """
 import json
+import csv
 
 
 class Base:
@@ -57,3 +58,50 @@ class Base:
             n = cls(1)
         n.update(**dictionary)
         return n
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances."""
+        try:
+            with open(cls.__name__ + ".json", 'r') as f:
+                json_file = Base.from_json_string(f.read())
+                return [cls.create(**dct) for dct in json_file]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes the CSV string representation of list_objs to a file.
+        """
+        fields = []
+        with open(cls.__name__ + ".csv", 'w') as f:
+            if list_objs is None or len(list_objs) <= 0:
+                f.write('[]')
+            else:
+                if cls.__name__ is "Rectangle":
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ is "Square":
+                    fields = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(f, fieldnames=fields)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes the CSV string representation
+        """
+        fields = []
+        try:
+            with open(cls.__name__ + ".csv", 'r') as f:
+                if cls.__name__ is "Rectangle":
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ is "Square":
+                    fields = ['id', 'size', 'x', 'y']
+                reader = csv.DictReader(f, fieldnames=fields)
+                dcts = [dict([k, int(v)] for k, v in lr.items())
+                        for lr in reader]
+                return [cls.create(**dct) for dct in dcts]
+
+        except IOError:
+            return []
