@@ -91,13 +91,15 @@ class Rectangle(Base):
         for i in range(self.height):
             print(' ' * self.x + '#' * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Updates the rectangle attributes. """
         dct = {}
         if args is not None and len(args) > 0:
             keys = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args) if len(args) <= 5 else 5):
                 dct[keys[i]] = args[i]
+        else:
+            dct = kwargs
 
         if len(dct) > 0:
             for key, value in dct.items():
