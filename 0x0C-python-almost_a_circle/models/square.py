@@ -30,5 +30,23 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """Set the width of the square. """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """ Updates the rectangle attributes. """
+        dct = {}
+        if args is not None and len(args) > 0:
+            keys = ['id', 'size', 'x', 'y']
+            for i in range(len(args) if len(args) <= 4 else 4):
+                dct[keys[i]] = args[i]
+        else:
+            dct = kwargs
+
+        if len(dct) > 0:
+            for key, value in dct.items():
+                if key == 'id' and value is None:
+                    self.__init__(self.size, self.x, self.y)
+                else:
+                    setattr(self, key, value)
