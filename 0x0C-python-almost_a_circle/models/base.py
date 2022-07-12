@@ -57,4 +57,3 @@ class Base:
             n = cls(1)
         n.update(**dictionary)
         return n
-
