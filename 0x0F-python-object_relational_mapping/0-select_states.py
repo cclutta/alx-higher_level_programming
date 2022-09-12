@@ -11,7 +11,7 @@ Args:
 import sys
 import MySQLdb
 
-if__name__ = "__main__":
+if __name__ = "__main__":
     mysql_u = sys.argv[1]
     mysql_p = sys.argv[2]
     mysql_db = sys.argv[3]
