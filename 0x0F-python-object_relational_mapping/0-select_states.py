@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Select states module from database hbtn_0e_0_usa
+Select states module from database hbtn_0e_0_usa script
 
 Args:
     mysql username
