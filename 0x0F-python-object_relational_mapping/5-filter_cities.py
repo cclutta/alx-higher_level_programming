@@ -20,8 +20,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=mysql_u, passwd=mysql_p, db=mysql_db)
     cur = db.cursor()
 
-    q = "SELECT cities.name FROM cities, states WHERE cities.state_id = states.id \
-        and states.name = %s ORDER BY cities.id;"
+    q = "SELECT cities.name FROM cities, states WHERE cities.state_id = \
+        states.id and states.name = %s ORDER BY cities.id;"
     cur.execute(q, (state_name_searched, ))
     rows = cur.fetchall()
 
