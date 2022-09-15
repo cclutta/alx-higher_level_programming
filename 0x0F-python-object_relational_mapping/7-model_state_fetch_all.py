@@ -19,15 +19,15 @@ if __name__ == "__main__":
     mysql_p = sys.argv[2]
     mysql_db = sys.argv[3]
     mysql_h = "localhost"
-   
+
     url = {'drivername': 'mysql+mysqldb', 'host': mysql_h,
-               'username': mysql_u, 'password': mysql_p, 'database': mysql_db}
+           'username': mysql_u, 'password': mysql_p, 'database': mysql_db}
     engine = create_engine(URL(**url), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    
+
     session = Session(bind=engine)
-    
+
     res = session.query(State).order_by(State.id)
-    
+
     for i in res:
         print("{}: {}".format(i.id, i.name))
