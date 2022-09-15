@@ -8,7 +8,7 @@ Args:
     mysql database name
 """
 import sys
-from sqlalchemy import (create_engine)s
+from sqlalchemy import (create_engine)
 from model_state import Base, State
 from sqlalchemy.engine.url import URL
 from sqlalchemy.orm.session import Session
@@ -22,7 +22,7 @@ if __name__ == "__main__":
    
     url = {'drivername': 'mysql+mysqldb', 'host': mysql_h,
                'username': mysql_u, 'password': mysql_p, 'database': mysql_db}
-    eng = create_engine(URL(**url), pool_pre_ping=True)
+    engine = create_engine(URL(**url), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     
     session = Session(bind=engine)
