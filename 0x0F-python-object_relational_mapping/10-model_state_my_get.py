@@ -28,7 +28,8 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    res = session.query(State).filter(State.name == state_name).order_by(State.id)
+    res = session.query(State).filter(
+        State.name == state_name).order_by(State.id)
 
     if res.first():
         print(res.first().id)
