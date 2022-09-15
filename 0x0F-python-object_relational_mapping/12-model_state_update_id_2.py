@@ -28,6 +28,6 @@ if __name__ == "__main__":
     session = Session(bind=engine)
 
     res = session.query(State).filter(State.id == 2)
-    res.update({State.name == "New Mexico"})
+    res.update({State.name: "New Mexico"})
 
     session.commit()
