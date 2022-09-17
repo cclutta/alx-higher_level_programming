@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    res = session.query(State).filter(State.name.like('%a%'))
+    res = session.query(State).filter(State.name.like("%a%"))
     res.delete(synchronize_session=False)
 
     session.commit()
