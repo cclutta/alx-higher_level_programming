@@ -15,19 +15,19 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    mySQL_u = sys.argv[1]
-    mySQL_p = sys.argv[2]
-    db_name = sys.argv[3]
+    mysql_u = sys.argv[1]
+    mysql_p = sys.argv[2]
+    mysql_db = sys.argv[3]
 
     url = {'drivername': 'mysql+mysqldb', 'host': 'localhost',
-           'username': mySQL_u, 'password': mySQL_p, 'database': db_name}
+           'username': mysql_u, 'password':  mysql_p, 'database':  mysql_db}
 
     engine = create_engine(URL(**url), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     session = Session(bind=engine)
 
-    q = session.query(State).filter(State.name.like('%a%'))
-    q.delete(synchronize_session=False)
+    res = session.query(State).filter(State.name.like('%a%'))
+    res.delete(synchronize_session=False)
 
     session.commit()
