@@ -30,9 +30,11 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    states = session.query(State)
-
-    for state in states:
+   for state in session.query(State).order_by(State.id).all():
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
+    session.close()
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("\t{}: {}".format(city.id, city.name))
