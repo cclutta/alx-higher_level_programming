@@ -29,5 +29,6 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    res = session.query(City, State)
-    print(res)
+    res = session.query(City, State).filter(City.state_id == State.id)
+    for city, state in res:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
