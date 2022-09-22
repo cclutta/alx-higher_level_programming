@@ -12,9 +12,8 @@ import sys
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import Session
 from sqlalchemy.engine.url import URL
-from model_state import Base, State
-from model_city import City
-
+from relationship_state import Base, State
+from relationship_city import City
 
 if __name__ == "__main__":
     mysql_u = sys.argv[1]
@@ -29,6 +28,8 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    res = session.query(City, State).filter(City.state_id == State.id)
-    for city, state in res:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    new_state = State(name="California")
+    new_state.cities.append(City(name="San Francisco"))
+
+    session.add(new_state)
+    session.commit()

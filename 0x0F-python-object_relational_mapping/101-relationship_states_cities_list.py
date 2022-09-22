@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Script that prints all `City` objects from the db
-
+Script that lists all `State` objects, and corresponding cities
 Arguments:
     mysql username (str)
     mysql password (str)
@@ -12,8 +11,8 @@ import sys
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import Session
 from sqlalchemy.engine.url import URL
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 
 
 if __name__ == "__main__":
@@ -29,6 +28,9 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    res = session.query(City, State).filter(City.state_id == State.id)
-    for city, state in res:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    states = session.query(State)
+
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
