@@ -4,11 +4,11 @@
 
 def find_peak(list_of_integers):
     """ Finds the peak in a list of unsorteed integers
-    
+
     Arguments:
         list_of_integers: list used to fund the peak
     """
-   if list_of_integers == []:
+    if list_of_integers == []:
         return None
 
     l_len = len(list_of_integers)
