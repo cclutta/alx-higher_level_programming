@@ -6,7 +6,7 @@
 """
 
 import sys
-from urrlib import parse, request
+import urrlib
 
 if __name__ == "__main__":
     url = sys.argv[1]
