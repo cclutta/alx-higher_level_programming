@@ -6,13 +6,13 @@
 """
 
 import sys
-import urllib
+from urllib import request, parse
 
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
 
     values = {"email": email}
-    data = urllib.parse.urlencode(values).encode('utf-8')
-    with urllib.request.urlopen(url, data) as res:
+    data = parse.urlencode(values).encode('utf-8')
+    with request.urlopen(url, data) as res:
         print(res.read().decode('utf-8'))
