@@ -9,11 +9,12 @@ import requests
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
+    
+    auth = (username, password)
 
-    url = "https://api.github.com/" + username
-    headers = {'Authorization': 'Bearer ' + password}
+    url = "https://api.github.com/user"
 
-    res = requests.get(url, headers=headers)
-    res = res.json()
+    res = requests.get(url, auth=auth)
+    json = res.json()
 
-    print(res.get("id"))
+    print(json.get("id"))
