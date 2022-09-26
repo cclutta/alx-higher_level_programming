@@ -11,7 +11,7 @@ import requests
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
-    q = "" if sys.argv[1] is None else sys.argv[1]
+    q = sys.argv[1] if len[sys.argv] is > 1 else ""
 
     values = {"q": q}
     res = requests.post(url, data=values)
